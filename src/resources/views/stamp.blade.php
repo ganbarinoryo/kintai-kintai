@@ -16,7 +16,8 @@
 
 <div class="flex__form__group">
 
-    <form class="form" action="{{ route('clock.store') }}" method="POST">
+
+    <form class="form" action="" method="POST">
         @csrf
         @method('POST')
         <div class="form__group-content">

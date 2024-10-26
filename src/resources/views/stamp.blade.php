@@ -12,14 +12,12 @@
         <h2>福場凛太郎さんお疲れ様です！</h2>
     </div>
 
-<!--勤務開始・終了-->
+<!--勤務-->
 
 <div class="flex__form__group">
 
-
-    <form class="form" action="" method="POST">
+    <form class="form" action="{{ route('clock.in') }}" method="POST">
         @csrf
-        @method('POST')
         <div class="form__group-content">
             <div class="form__clock-in-button">
                 <button class="form__button-submit" type="submit">
@@ -29,7 +27,8 @@
         </div>
     </form>
 
-    <form class="form">
+    <form class="form" action="{{ route('clock.out') }}" method="POST">
+        @csrf
         <div class="form__group-content">
             <div class="form__clock-out-button">
                 <button class="form__button-submit" type="submit">勤務終了
@@ -39,23 +38,27 @@
     </form>
 </div>
 
-<!--休憩開始・終了-->
+<!--休憩-->
 
 <div class="flex__form__group">
 
-    <form class="form">
+    <form class="form" action="{{ route('break.start') }}" method="POST">
+        @csrf
         <div class="form__group-content">
             <div class="form__break-in-button">
+                <input type="hidden" name="clock_id" value="{{ $currentClock->id }}">
                 <button class="form__button-submit" type="submit">休憩開始
             </button>
             </div>
         </div>
     </form>
 
-    <form class="form" action="">
+    <form class="form" action="{{ route('break.end') }}" method="POST">
+        @csrf
         <div class="form__group-content">
             <div class="form__break-out-button">
-                <button class="form__button-submit" type="submit">休憩終了
+                <input type="hidden" name="clock_id" value="{{ $currentClock->id }}">
+                <button class="form__button-submit" type="submit" >休憩終了
             </button>
             </div>
         </div>

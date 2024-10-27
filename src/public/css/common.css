@@ -1,3 +1,7 @@
+* {
+    font-family: 'Hiragino Kaku Gothic ProN', sans-serif !important;
+}
+
 main {
     background-color: #ebebeb;
 
@@ -60,4 +64,8 @@ main {
     width: 100%;
     background: #ffffff;
     text-align: center;
+}
+
+.footer__inner h5 {
+    font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
 }

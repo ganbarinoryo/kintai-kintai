@@ -27,6 +27,5 @@ Route::middleware(['web', 'auth'])->group(function () {
     Route::post('/break/end', [BreakTimeController::class, 'end'])->name('break.end');
 });
 
-// 日付一覧ページへ
-Route::get('/attendance', [UserController::class, 'attendance']);
-
+//ページネーション
+Route::get('/attendance', [UserController::class, 'attendance'])->name('attendance');

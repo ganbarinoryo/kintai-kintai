@@ -47,3 +47,8 @@
     color: #000000;
     cursor: pointer;
 }
+
+.disabled {
+    color: gray; /* 灰色に変更 */
+    pointer-events: none; /* クリックイベントを無効化 */
+}

@@ -13,16 +13,14 @@
     </div>
 
 <!--勤務-->
-
 <div class="flex__form__group">
-
     <form class="form" action="{{ route('clock.in') }}" method="POST">
         @csrf
         <div class="form__group-content">
             <div class="form__clock-in-button">
-                <button class="form__button-submit" type="submit">
+                <button class="form__button-submit {{ $currentClock->is_active ? 'disabled' : '' }}" type="submit" {{ $currentClock->is_active ? 'disabled' : '' }}>
                     勤務開始
-            </button>
+                </button>
             </div>
         </div>
     </form>
@@ -31,12 +29,14 @@
         @csrf
         <div class="form__group-content">
             <div class="form__clock-out-button">
-                <button class="form__button-submit" type="submit">勤務終了
-            </button>
+                <button class="form__button-submit" type="submit" {{ !$currentClock->is_active ? 'disabled' : '' }}>
+                    勤務終了
+                </button>
             </div>
         </div>
     </form>
 </div>
+
 
 <!--休憩-->
 

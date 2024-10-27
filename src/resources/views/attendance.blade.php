@@ -8,14 +8,8 @@
 <title>Atte</title>
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="{{ asset('css/attendance.css') }}">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
-</head>
 
-<style>
-  body {
-    font-family: 'Noto Sans JP', sans-serif;
-  }
-</style>
+</head>
 
 <body>
     <header class="header">

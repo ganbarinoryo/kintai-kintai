@@ -9,7 +9,7 @@ class Clock extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id', 'clock_in', 'clock_out'];
+    protected $fillable = ['user_id', 'clock_in', 'clock_out', 'is_active'];
     
     // usersテーブルとのリレーション設定
     public function user()

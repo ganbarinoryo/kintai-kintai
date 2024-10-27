@@ -14,6 +14,7 @@ class ClockController extends Controller
         Clock::create([
             'user_id' => Auth::id(),
             'clock_in' => now()->format('H:i:s'),
+            'is_active' => true, // 勤務開始時にアクティブにする
         ]);
 
         return redirect()->back()->with('message', '勤務開始を打刻しました。');
@@ -29,6 +30,7 @@ class ClockController extends Controller
         if ($clock) {
             $clock->update([
                 'clock_out' => now()->format('H:i:s'),
+                'is_active' => false, // 勤務終了時に非アクティブにする
             ]);
 
             return redirect()->back()->with('message', '勤務終了を打刻しました。');
